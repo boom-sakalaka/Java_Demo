@@ -86,8 +86,18 @@ public class ScoreManage {
 		return num;
 	}
 	
+	/**
+	 * 修改成绩
+	 * @param a 成绩数组
+	 * @param index 修改下标
+	 * @param changeSocre 要修改的成绩
+	 */
 	public void changeScoreFn (float [] a,int index,float changeSocre) {
-		a[index] = changeSocre;
+		try {
+			a[index] = changeSocre;
+		}catch(ArrayIndexOutOfBoundsException e) {
+			System.out.println("数组下标越界");
+		}
 	}
 	
 	public static void main(String[] args) {
@@ -143,7 +153,12 @@ public class ScoreManage {
 				break;
 			case 3:
 				// 统计成绩大于85分的人数
-				System.out.println("成绩大于85分的人数为:"+sm.getStuNum(a));
+				if(a != null) {
+					System.out.println("成绩大于85分的人数为:"+sm.getStuNum(a));
+				}else {
+					System.out.println("还未在数组中插入数据，请重新选择操作!");
+				}
+				
 				break;
 			case 4:
 				// 修改指定位置处的成绩
@@ -154,7 +169,7 @@ public class ScoreManage {
 						System.out.println("请输入要修改数据的位置(从0开始)");
 						ind = sn.nextInt();
 						System.out.println("请输入新数据");
-						changeSocre = sn.nextInt();
+						changeSocre = sn.nextFloat();
 					}catch(InputMismatchException e) {
 						System.out.println("输入的数据格式有误，不得有非数字!");
 						sn.next();
