@@ -10,13 +10,22 @@ public class Cat {
 	int month;
 	double weight;
 	String species;
-	boolean test;
+	
+	public Cat (String name,int month,double weight,String species) {
+		this.name = name;
+		this.month = month;
+		this.weight = weight;
+		this.species = species;
+	}
 	
 	// 方法： 跑动、吃东西
 	public void run () {
 		System.out.println("小猫快跑");
 	}
+	
 	public void eat () {
 		System.out.println("小猫吃鱼");
 	}
+	
+	
 }
