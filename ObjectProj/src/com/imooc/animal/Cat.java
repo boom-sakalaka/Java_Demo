@@ -20,7 +20,7 @@ public class Cat {
 	
 	// 方法： 跑动、吃东西
 	public void run () {
-		System.out.println("小猫快跑");
+		System.out.println( this.name +"小猫快跑");
 	}
 	
 	public void eat () {
