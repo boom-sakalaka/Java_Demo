@@ -39,14 +39,22 @@ public class Student {
 		return this.getStudentSex();
 	}
 	public void setStudentSex(String studentSex) {
-		this.studentSex = studentSex;
+		if(studentSex == "ÄĞ" || studentSex == "Å®") {
+			this.studentSex = studentSex;
+		}else {
+			this.studentSex = "ÄĞ";
+		}
 	}
 	
 	public int getStudentAge() {
 		return this.studentAge;
 	}
 	public void setStudentAge(int studentAge) {
-		this.studentAge = studentAge;
+		if(studentAge < 10 || studentAge > 100) {
+			this.studentAge = 18;
+		}else {
+			this.studentAge = studentAge;
+		}
 	} 
 	
 	/**
