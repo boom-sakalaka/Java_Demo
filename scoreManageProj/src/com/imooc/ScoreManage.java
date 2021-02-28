@@ -12,7 +12,7 @@ public class ScoreManage {
 	/**
 	 * 显示功能
 	 */
-	public void notice() {
+	public void displayMenu() {
 		System.out.println("***********************************");
 		System.out.println("         1.--初始化数学成绩");
 		System.out.println("         2.--求成绩的平均值");
@@ -28,7 +28,7 @@ public class ScoreManage {
 	 * len 数组长度 要存储成绩的个数
 	 * @return 存储数据的数组
 	 */
-	public float [] insertScoreData (int len) {
+	public float [] initScore (int len) {
 		float [] a = new float[len];
 		Scanner sc = new Scanner(System.in);
 		for(int i = 0; i < a.length; i++) {
@@ -48,9 +48,9 @@ public class ScoreManage {
 	
 	/**
 	 * 显示分数
-	 * @param a 分数数组
+	 * @param f 分数数组
 	 */
-	public void showScoreData (float [] a) {
+	public void displayAllScore (float [] a) {
 		System.out.println("成绩为:");
 		for(int i = 0; i< a.length; i++) {
 			System.out.print(+a[i] + "   ");
@@ -60,25 +60,25 @@ public class ScoreManage {
 	
 	/**
 	 * 求分数的平均值
-	 * @param a 分数数组
+	 * @param f 分数数组
 	 * @return 平均分
 	 */
-	public float getAverage(float [] a) {
+	public float average(float [] f) {
 		float sum = 0;
-		for(float num : a) {
+		for(float num : f) {
 			sum+= num;
 		}
-		return sum/a.length;
+		return sum/f.length;
 	}
 	
 	/**
 	 * 统计成绩大于85分的人数
-	 * @param a 分数数组
+	 * @param f 分数数组
 	 * @return 成绩大于85分的人数
 	 */
-	public int getStuNum(float [] a) {
+	public int count(float [] f) {
 		int num = 0;
-		for(float score : a) {
+		for(float score : f) {
 			if(score > 85) {
 				num++;
 			}
@@ -88,13 +88,13 @@ public class ScoreManage {
 	
 	/**
 	 * 修改成绩
-	 * @param a 成绩数组
+	 * @param f 成绩数组
 	 * @param index 修改下标
-	 * @param changeSocre 要修改的成绩
+	 * @param newScore 要修改的成绩
 	 */
-	public void changeScoreFn (float [] a,int index,float changeSocre) {
+	public void update (float [] f,int index,float newScore) {
 		try {
-			a[index] = changeSocre;
+			f[index] = newScore;
 		}catch(ArrayIndexOutOfBoundsException e) {
 			System.out.println("数组下标越界");
 		}
@@ -113,7 +113,7 @@ public class ScoreManage {
 		//循环调用
 		while(true) {
 			// 调用 显示功能
-			sm.notice();
+			sm.displayMenu();
 			// 对输入的值做校验
 			try {
 				input = sn.nextInt();
@@ -139,13 +139,13 @@ public class ScoreManage {
 					sn.next();
 					break;
 				}
-				a= sm.insertScoreData(n);
-				sm.showScoreData(a);
+				a= sm.initScore(n);
+				sm.displayAllScore(a);
 				break;
 			case 2: 
 				// 求平均值
 				if(a != null) {
-					float averageNum = sm.getAverage(a);
+					float averageNum = sm.average(a);
 					System.out.println("数学平均成绩为:"+averageNum);
 				}else {
 					System.out.println("还未在数组中插入数据，请重新选择操作!");
@@ -154,7 +154,7 @@ public class ScoreManage {
 			case 3:
 				// 统计成绩大于85分的人数
 				if(a != null) {
-					System.out.println("成绩大于85分的人数为:"+sm.getStuNum(a));
+					System.out.println("成绩大于85分的人数为:"+sm.count(a));
 				}else {
 					System.out.println("还未在数组中插入数据，请重新选择操作!");
 				}
@@ -164,7 +164,7 @@ public class ScoreManage {
 				// 修改指定位置处的成绩
 				if(a != null) {
 					System.out.println("修改前:");
-					sm.showScoreData(a);
+					sm.displayAllScore(a);
 					try {
 						System.out.println("请输入要修改数据的位置(从0开始)");
 						ind = sn.nextInt();
@@ -175,9 +175,9 @@ public class ScoreManage {
 						sn.next();
 						break;
 					}
-					sm.changeScoreFn(a, ind, changeSocre);
+					sm.update(a, ind, changeSocre);
 					System.out.println("修改后:");
-					sm.showScoreData(a);
+					sm.displayAllScore(a);
 				}else {
 					System.out.println("还未在数组中插入数据，请重新选择操作!");
 				}
@@ -185,7 +185,7 @@ public class ScoreManage {
 			case 5: 
 				//打印输出所有成绩
 				if(a != null) {
-					sm.showScoreData(a);
+					sm.displayAllScore(a);
 				}else {
 					System.out.println("还未在数组中插入数据，请重新选择操作!");
 				}
