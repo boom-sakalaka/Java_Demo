@@ -7,6 +7,7 @@ public class Student {
 	private String studentSex;
 	private int studentAge;
 	
+	
 	// 无参构造方法
 	public Student() {
 		
@@ -36,10 +37,10 @@ public class Student {
 	}
 	
 	public String getStudentSex() {
-		return this.getStudentSex();
+		return this.studentSex;
 	}
 	public void setStudentSex(String studentSex) {
-		if(studentSex == "男" || studentSex == "女") {
+		if(studentSex.equals('男') || studentSex.equals('女')) {
 			this.studentSex = studentSex;
 		}else {
 			this.studentSex = "男";
@@ -64,7 +65,32 @@ public class Student {
 	public String info() {
 		return "学生信息如下:\n学号:" + this.getStudentNo() 
 		+ "\n姓名:" + this.getStudentName() 
-		+ "\n性别:" + this.getStudentAge()
+		+ "\n性别:" + this.getStudentSex()
 		+ "\n年龄:" + this.getStudentAge();
+	}
+	
+	/**
+	 * 学生自我介绍的方法
+	 * @param subjectName
+	 * @param subjectLife
+	 * @return 学生介绍 包含 学生的专业和专业年限
+	 */
+	public String info(String subjectName , String subjectLife) {
+		return "学生信息如下:\n学号:" + this.getStudentNo() 
+		+ "\n姓名:" + this.getStudentName() 
+		+ "\n性别:" + this.getStudentSex()
+		+ "\n年龄:" + this.getStudentAge()
+		+ "\n专业:" + subjectName
+		+ "\n学制年限:" + subjectLife;
+	}
+	
+	public String info(Subject mySubject) {
+		return "学生信息如下:\n学号:" + this.getStudentNo() 
+		+ "\n姓名:" + this.getStudentName() 
+		+ "\n性别:" + this.getStudentSex()
+		+ "\n年龄:" + this.getStudentAge()
+		+ "\n专业编号:"+ mySubject.getSubjectNo()
+		+ "\n专业:" + mySubject.getSubjectName()
+		+ "\n学制年限:" + mySubject.getSubjectLife();
 	}
 }
