@@ -6,6 +6,7 @@ public class Student {
 	private String studentName;
 	private String studentSex;
 	private int studentAge;
+	private Subject studentSubject;
 	
 	
 	// 无参构造方法
@@ -14,11 +15,12 @@ public class Student {
 	}
 	
 	// 多参构造方法 实现对全部属性的赋值
-	public Student(String studentNo,String studentName,String studentSex,int studentAge) {
+	public Student(String studentNo,String studentName,String studentSex,int studentAge,Subject studentSubject) {
 		this.setStudentNo(studentNo);
 		this.setStudentName(studentName);
 		this.setStudentSex(studentSex);
 		this.setStudentAge(studentAge);
+		this.setStudentSubject(studentSubject);
 	}
 	
 	
@@ -58,6 +60,16 @@ public class Student {
 		}
 	} 
 	
+	public void setStudentSubject(Subject studentSubject) {
+		this.studentSubject = studentSubject;
+	}
+	
+	public Subject getStudentSubject() {
+		if(this.studentSubject == null)
+			this.studentSubject = new Subject();
+		return this.studentSubject;
+	}
+	
 	/**
 	 *  
 	 * @return 信息介绍
@@ -66,7 +78,10 @@ public class Student {
 		return "学生信息如下:\n学号:" + this.getStudentNo() 
 		+ "\n姓名:" + this.getStudentName() 
 		+ "\n性别:" + this.getStudentSex()
-		+ "\n年龄:" + this.getStudentAge();
+		+ "\n年龄:" + this.getStudentAge()
+		+ "\n专业编号:"+ this.getStudentSubject().getSubjectNo()
+		+ "\n专业:" + this.getStudentSubject().getSubjectName()
+		+ "\n学制年限:" + this.getStudentSubject().getSubjectLife();
 	}
 	
 	/**
