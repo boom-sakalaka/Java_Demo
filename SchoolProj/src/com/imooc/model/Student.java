@@ -50,7 +50,7 @@ public class Student {
 		return this.studentSex;
 	}
 	public void setStudentSex(String studentSex) {
-		if(studentSex.equals('ÄÐ') || studentSex.equals('Å®')) {
+		if(studentSex.equals("ÄÐ") || studentSex.equals("Å®")) {
 			this.studentSex = studentSex;
 		}else {
 			this.studentSex = "ÄÐ";
