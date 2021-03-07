@@ -36,4 +36,8 @@ public class Animal {
 		System.out.println(this.getName() + "在吃东西");
 	}
 	
+	// 跳跃
+	public void jump() {
+		System.out.println("跳跃是动物的本能");
+	}
 }

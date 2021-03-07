@@ -15,6 +15,8 @@ public class Test {
 		two.setName("æ¤æ¤");
 		two.setMonth(1);
 		two.eat();
+		System.out.println("=================");
+		two.eat("¹·¹·");
 		two.sleep();
 	}
 	
