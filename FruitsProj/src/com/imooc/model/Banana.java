@@ -24,4 +24,9 @@ public class Banana extends Fruits {
 	public void advantage(String color) {
 		System.out.println( this.getVariety() +"ÑÕÉ«Îª" + color);
 	}
+	@Override
+	public void eat() {
+		// TODO Auto-generated method stub
+		super.eat();
+	}
 }
