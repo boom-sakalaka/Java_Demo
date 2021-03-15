@@ -9,7 +9,7 @@ public class Person {
 	// 成员内部类
 	public class Heart {
 		public String beat() {
-			return age + "岁的心脏在跳动";
+			return Person.this.age + "岁的心脏在跳动";
 		}
 	}
 }
