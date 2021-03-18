@@ -33,5 +33,8 @@ public class TryDemoOne {
 		finally {
 			System.out.println("=========运算结束===========");
 		}
+		
+		System.out.println("=========运算结束2===========");
+		
 	}
 }

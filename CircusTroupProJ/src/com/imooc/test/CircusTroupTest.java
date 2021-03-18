@@ -61,7 +61,8 @@ public class CircusTroupTest {
 					ctTest.toAct(new Clown("Kahle", 5));
 					break;
 				default: 
-					System.out.println("请输入0-5之间的数字"); break;
+					System.out.println("请输入0-5之间的数字");
+					continue;
 			}
 			
 			while(true) {
