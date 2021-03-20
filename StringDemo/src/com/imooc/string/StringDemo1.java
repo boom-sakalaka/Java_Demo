@@ -16,6 +16,8 @@ public class StringDemo1 {
 		// 取出 子串 编程
 		System.out.println(str.substring(5,7));
 		
+		
+		
 	}
 
 }
