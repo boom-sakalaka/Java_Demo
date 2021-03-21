@@ -6,7 +6,7 @@ import java.util.Set;
 
 public class SetDemoTwo {
 	public static void main (String [] args) {
-		Set set = new HashSet();
+		Set<Student> set = new HashSet<Student>();
 		
 		// 创建学生对象
 		Student st1 = new Student(1,"Tom", 87);
@@ -18,7 +18,7 @@ public class SetDemoTwo {
 		set.add(st3);
 		
 		// 显示set中元素
-		Iterator it = set.iterator();
+		Iterator<Student> it = set.iterator();
 		
 		while(it.hasNext()) {
 			System.out.println(it.next());
