@@ -5,8 +5,14 @@ class MyThread extends Thread {
 		super(name);
 	}
 	public void run() {
-		for(int i =0; i<= 10; i++) {
+		for(int i =0; i<= 30; i++) {
 			System.out.println(getName() + "正在运行" + i);
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 	}
 }
