@@ -18,6 +18,24 @@ public class PlayList {
 		musicList = new ArrayList<Song> ();
 	}
 	
+	
+	
+	public String getPlayListName() {
+		return playListName;
+	}
+
+	public void setPlayListName(String playListName) {
+		this.playListName = playListName;
+	}
+
+	public List<Song> getMusicList() {
+		return musicList;
+	}
+
+	public void setMusicList(List<Song> musicList) {
+		this.musicList = musicList;
+	}
+
 	/**
 	 * 将歌曲添加到播放列表
 	 * @param song 要添加的歌曲

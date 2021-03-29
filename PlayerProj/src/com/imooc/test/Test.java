@@ -1,6 +1,7 @@
 package com.imooc.test;
 
 import com.imooc.player.PlayList;
+import com.imooc.player.PlayListCollection;
 import com.imooc.player.Song;
 
 public class Test {
@@ -64,12 +65,50 @@ public class Test {
 		mainPlayList.displayAllSong();
 	}
 	
+	public void testPlayListCollection() {
+		// 定义几个Song类对象
+		Song song1 = new Song("s001", "两只老虎","小太阳");
+		Song song2 = new Song("s002","小燕子", "风车");
+		Song song3 = new Song("s003","茉莉花","彩虹");
+		
+		// 创建主播放列表
+		PlayList mainPlayList = new PlayList("主播放列表");
+		// 将歌曲放入到播放列表中
+		mainPlayList.addToPlayList(song1);
+		mainPlayList.addToPlayList(song2);
+		mainPlayList.addToPlayList(song3);
+		mainPlayList.displayAllSong();
+		
+		// 定义一个新的播放列表 从主播放列表中的歌曲放入
+		PlayList favouritePlayList = new PlayList("最喜欢的歌曲");
+		favouritePlayList.addToPlayList(mainPlayList.getMusicList().get(0));
+		favouritePlayList.addToPlayList(mainPlayList.getMusicList().get(1));
+		favouritePlayList.displayAllSong();
+		
+		// 将两个播放列表添加到播放列表集合中
+		PlayListCollection plc = new PlayListCollection();
+		plc.addPlayList(mainPlayList);
+		plc.addPlayList(favouritePlayList);
+		plc.displayListName();
+		// 格局播放列表的名称查询播放列表信息，并显示所有歌曲
+		PlayList playList =  plc.searchPlayListByName("最喜欢的歌曲");
+		playList.displayAllSong();
+		
+		// 删除播放列表信息
+		System.out.println("删除前");
+		plc.displayListName();
+		plc.deletePlayList(favouritePlayList);
+		System.out.println("删除后");
+		plc.displayListName();
+	}
+	
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Test test = new Test();
 		//test.testSong();
-		test.testPlayList();
+		//test.testPlayList();
+		test.testPlayListCollection();
 	}
 
 }
