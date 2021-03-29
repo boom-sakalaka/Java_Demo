@@ -52,6 +52,16 @@ public class Test {
 		}else {
 			System.out.println("该歌曲不存在!");
 		}
+		
+		// 修改歌曲信息
+		Song songUpdate = new Song("s005","蜗牛与黄鹂鸟","小太阳");
+		mainPlayList.updateSong("s001", songUpdate);
+		mainPlayList.displayAllSong();
+		
+		// 删除歌曲信息
+		
+		mainPlayList.deleteSong("s005");
+		mainPlayList.displayAllSong();
 	}
 	
 	

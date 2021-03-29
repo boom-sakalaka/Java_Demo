@@ -69,6 +69,36 @@ public class PlayList {
 	}
 	
 	/**
+	 * 根据ID 修改播放列表中的歌曲信息
+	 * @param id 要修改的歌曲ID
+	 * @param song 新的歌曲信息
+	 */
+	public void updateSong(String id, Song song) {
+		Song song1 = searchSongById(id);
+		if(song1 == null) {
+			System.out.println("没有找到id为" + id + "对应的歌曲信息!");
+		}else {
+			musicList.remove(song1);
+			musicList.add(song);
+			System.out.println("修改成功!");
+		}
+	}
+	
+	/**
+	 * 删除播放列表中的指定歌曲信息
+	 * @param id
+	 */
+	public void deleteSong (String id) {
+		Song song1 = searchSongById(id);
+		if(song1 == null) {
+			System.out.println("没有找到id为" + id + "对应的歌曲信息!");
+		}else {
+			musicList.remove(song1);
+			System.out.println("删除成功!");
+		}
+	}
+	
+	/**
 	 * 显示播放列表中的所有歌曲
 	 */
 	public void displayAllSong() {
