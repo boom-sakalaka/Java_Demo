@@ -35,6 +35,23 @@ public class Test {
 		
 		// 显示播放列表的内容
 		mainPlayList.displayAllSong();
+		
+		//通过id查询歌曲信息
+		Song song = mainPlayList.searchSongById("s002");
+		if(song != null) {
+			System.out.println("根据ID查询的歌曲信息为:");
+			System.out.println(song);
+		}else {
+			System.out.println("该歌曲不存在!");
+		}
+		
+		Song songTwo = mainPlayList.searchSongByName("茉莉花");
+		if(songTwo != null) {
+			System.out.println("根据名字查询的歌曲信息为:");
+			System.out.println(songTwo);
+		}else {
+			System.out.println("该歌曲不存在!");
+		}
 	}
 	
 	

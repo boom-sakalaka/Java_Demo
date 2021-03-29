@@ -39,6 +39,36 @@ public class PlayList {
 	}
 	
 	/**
+	 * 根据歌曲ID查询歌曲的信息
+	 * @param id
+	 * @return 歌曲类 Song
+	 */
+	public Song searchSongById(String id) {
+		Song song = null;
+		for(Song song1 : musicList) {
+			if(song1.getId().equals(id)) {
+				song = song1;break;
+			}
+		}
+		return song;
+	}
+	
+	/**
+	 * 根据歌曲的名称查询歌曲
+	 * @param name
+	 * @return 歌曲类 Song
+	 */
+	public Song searchSongByName(String name) {
+		Song song = null;
+		for(Song song1 : musicList) {
+			if(song1.getName().equals(name)) {
+				song = song1;break;
+			}
+		}
+		return song;
+	}
+	
+	/**
 	 * 显示播放列表中的所有歌曲
 	 */
 	public void displayAllSong() {
