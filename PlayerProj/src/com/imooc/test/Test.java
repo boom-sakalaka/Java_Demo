@@ -7,156 +7,156 @@ import com.imooc.player.PlayListCollection;
 import com.imooc.player.Song;
 
 public class Test {
-	// ¶Ô¸èÇúÀà½øÐÐ²âÊÔ
+	// ï¿½Ô¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð²ï¿½ï¿½ï¿½
 	public void testSong() {
-		Song song1 = new Song("s001", "Á½Ö»ÀÏ»¢", "Ð¡Ì«Ñô");
-		Song song2 = new Song("s002", "Ð¡Ñà×Ó", "·ç³µ");
-		Song song3 = new Song("s003", "ÜÔÀò»¨", "²Êºç");
-		Song song4 = new Song("s003", "ÜÔÀò»¨", "²Êºç");
+		Song song1 = new Song("s001", "ï¿½ï¿½Ö»ï¿½Ï»ï¿½", "Ð¡Ì«ï¿½ï¿½");
+		Song song2 = new Song("s002", "Ð¡ï¿½ï¿½ï¿½ï¿½", "ï¿½ç³µ");
+		Song song3 = new Song("s003", "ï¿½ï¿½ï¿½ï¿½", "ï¿½Êºï¿½");
+		Song song4 = new Song("s003", "ï¿½ï¿½ï¿½ï¿½", "ï¿½Êºï¿½");
 		System.out.println(song1);
 		System.out.println(song2);
 		System.out.println(song3);
 
-		// ²âÊÔsong1ºÍsong3ÕâÁ½¸ö¶ÔÏóÊÇ·ñÏàµÈ
+		// ï¿½ï¿½ï¿½ï¿½song1ï¿½ï¿½song3ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½
 		System.out.println("song1 == song3?" + (song1.equals(song3)));
 		System.out.println("song3 == song4?" + (song3.equals(song4)));
 	}
 
 	public void testPlayList() {
-		// ¶¨Òå¼¸¸öSongÀà¶ÔÏó
-		Song song1 = new Song("s001", "Á½Ö»ÀÏ»¢", "Ð¡Ì«Ñô");
-		Song song2 = new Song("s002", "Ð¡Ñà×Ó", "·ç³µ");
-		Song song3 = new Song("s003", "ÜÔÀò»¨", "²Êºç");
-		Song song4 = new Song("s003", "ÜÔÀò»¨", "²Êºç");
+		// ï¿½ï¿½ï¿½å¼¸ï¿½ï¿½Songï¿½ï¿½ï¿½ï¿½ï¿½
+		Song song1 = new Song("s001", "ï¿½ï¿½Ö»ï¿½Ï»ï¿½", "Ð¡Ì«ï¿½ï¿½");
+		Song song2 = new Song("s002", "Ð¡ï¿½ï¿½ï¿½ï¿½", "ï¿½ç³µ");
+		Song song3 = new Song("s003", "ï¿½ï¿½ï¿½ï¿½", "ï¿½Êºï¿½");
+		Song song4 = new Song("s003", "ï¿½ï¿½ï¿½ï¿½", "ï¿½Êºï¿½");
 
-		// ´´½¨Ò»¸ö²¥·ÅÁÐ±í
-		PlayList mainPlayList = new PlayList("Ö÷²¥·ÅÁÐ±í");
+		// ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½
+		PlayList mainPlayList = new PlayList("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½");
 		mainPlayList.addToPlayList(song1);
 		mainPlayList.addToPlayList(song2);
 		mainPlayList.addToPlayList(song3);
 		mainPlayList.addToPlayList(song4);
 
-		// ÏÔÊ¾²¥·ÅÁÐ±íµÄÄÚÈÝ
+		// ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		mainPlayList.displayAllSong();
 
-		// Í¨¹ýid²éÑ¯¸èÇúÐÅÏ¢
+		// Í¨ï¿½ï¿½idï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
 		Song song = mainPlayList.searchSongById("s002");
 		if (song != null) {
-			System.out.println("¸ù¾ÝID²éÑ¯µÄ¸èÇúÐÅÏ¢Îª:");
+			System.out.println("ï¿½ï¿½ï¿½ï¿½IDï¿½ï¿½Ñ¯ï¿½Ä¸ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢Îª:");
 			System.out.println(song);
 		} else {
-			System.out.println("¸Ã¸èÇú²»´æÔÚ!");
+			System.out.println("ï¿½Ã¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½!");
 		}
 
-		Song songTwo = mainPlayList.searchSongByName("ÜÔÀò»¨");
+		Song songTwo = mainPlayList.searchSongByName("ï¿½ï¿½ï¿½ï¿½");
 		if (songTwo != null) {
-			System.out.println("¸ù¾ÝÃû×Ö²éÑ¯µÄ¸èÇúÐÅÏ¢Îª:");
+			System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö²ï¿½Ñ¯ï¿½Ä¸ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢Îª:");
 			System.out.println(songTwo);
 		} else {
-			System.out.println("¸Ã¸èÇú²»´æÔÚ!");
+			System.out.println("ï¿½Ã¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½!");
 		}
 
-		// ÐÞ¸Ä¸èÇúÐÅÏ¢
-		Song songUpdate = new Song("s005", "ÎÏÅ£Óë»Æð¿Äñ", "Ð¡Ì«Ñô");
+		// ï¿½Þ¸Ä¸ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
+		Song songUpdate = new Song("s005", "ï¿½ï¿½Å£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "Ð¡Ì«ï¿½ï¿½");
 		mainPlayList.updateSong("s001", songUpdate);
 		mainPlayList.displayAllSong();
 
-		// É¾³ý¸èÇúÐÅÏ¢
+		// É¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
 
 		mainPlayList.deleteSong("s005");
 		mainPlayList.displayAllSong();
 	}
 
 	public void testPlayListCollection() {
-		// ¶¨Òå¼¸¸öSongÀà¶ÔÏó
-		Song song1 = new Song("s001", "Á½Ö»ÀÏ»¢", "Ð¡Ì«Ñô");
-		Song song2 = new Song("s002", "Ð¡Ñà×Ó", "·ç³µ");
-		Song song3 = new Song("s003", "ÜÔÀò»¨", "²Êºç");
+		// ï¿½ï¿½ï¿½å¼¸ï¿½ï¿½Songï¿½ï¿½ï¿½ï¿½ï¿½
+		Song song1 = new Song("s001", "ï¿½ï¿½Ö»ï¿½Ï»ï¿½", "Ð¡Ì«ï¿½ï¿½");
+		Song song2 = new Song("s002", "Ð¡ï¿½ï¿½ï¿½ï¿½", "ï¿½ç³µ");
+		Song song3 = new Song("s003", "ï¿½ï¿½ï¿½ï¿½", "ï¿½Êºï¿½");
 
-		// ´´½¨Ö÷²¥·ÅÁÐ±í
-		PlayList mainPlayList = new PlayList("Ö÷²¥·ÅÁÐ±í");
-		// ½«¸èÇú·ÅÈëµ½²¥·ÅÁÐ±íÖÐ
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½
+		PlayList mainPlayList = new PlayList("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½");
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ëµ½ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ï¿½ï¿½
 		mainPlayList.addToPlayList(song1);
 		mainPlayList.addToPlayList(song2);
 		mainPlayList.addToPlayList(song3);
 		mainPlayList.displayAllSong();
 
-		// ¶¨ÒåÒ»¸öÐÂµÄ²¥·ÅÁÐ±í ´ÓÖ÷²¥·ÅÁÐ±íÖÐµÄ¸èÇú·ÅÈë
-		PlayList favouritePlayList = new PlayList("×îÏ²»¶µÄ¸èÇú");
+		// ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ÂµÄ²ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ï¿½ÐµÄ¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		PlayList favouritePlayList = new PlayList("ï¿½ï¿½Ï²ï¿½ï¿½ï¿½Ä¸ï¿½ï¿½ï¿½");
 		favouritePlayList.addToPlayList(mainPlayList.getMusicList().get(0));
 		favouritePlayList.addToPlayList(mainPlayList.getMusicList().get(1));
 		favouritePlayList.displayAllSong();
 
-		// ½«Á½¸ö²¥·ÅÁÐ±íÌí¼Óµ½²¥·ÅÁÐ±í¼¯ºÏÖÐ
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ï¿½ï¿½ï¿½Óµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		PlayListCollection plc = new PlayListCollection();
 		plc.addPlayList(mainPlayList);
 		plc.addPlayList(favouritePlayList);
 		plc.displayListName();
-		// ¸ñ¾Ö²¥·ÅÁÐ±íµÄÃû³Æ²éÑ¯²¥·ÅÁÐ±íÐÅÏ¢£¬²¢ÏÔÊ¾ËùÓÐ¸èÇú
-		PlayList playList = plc.searchPlayListByName("×îÏ²»¶µÄ¸èÇú");
+		// ï¿½ï¿½Ö²ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ²ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½Ð¸ï¿½ï¿½ï¿½
+		PlayList playList = plc.searchPlayListByName("ï¿½ï¿½Ï²ï¿½ï¿½ï¿½Ä¸ï¿½ï¿½ï¿½");
 		playList.displayAllSong();
 
-		// É¾³ý²¥·ÅÁÐ±íÐÅÏ¢
-		System.out.println("É¾³ýÇ°");
+		// É¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ï¿½ï¿½Ï¢
+		System.out.println("É¾ï¿½ï¿½Ç°");
 		plc.displayListName();
 		plc.deletePlayList(favouritePlayList);
-		System.out.println("É¾³ýºó");
+		System.out.println("É¾ï¿½ï¿½ï¿½ï¿½");
 		plc.displayListName();
 	}
 
-	// Ö÷²Ëµ¥
+	// ï¿½ï¿½ï¿½Ëµï¿½
 	public void mainMenu() {
 		System.out.println("***************************");
-		System.out.println("          **Ö÷²Ëµ¥**       ");
-		System.out.println("          1--²¥·ÅÁÐ±í¹ÜÀí       ");
-		System.out.println("          2--²¥·ÅÆ÷¹ÜÀí       ");
-		System.out.println("          0--ÍË³ö       ");
+		System.out.println("          **ï¿½ï¿½ï¿½Ëµï¿½**       ");
+		System.out.println("          1--ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ï¿½ï¿½ï¿½ï¿½       ");
+		System.out.println("          2--ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½       ");
+		System.out.println("          0--ï¿½Ë³ï¿½       ");
 		System.out.println("***************************");
 	}
 
-	// ²¥·ÅÁÐ±í¹ÜÀí²Ëµ¥
+	// ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ëµï¿½
 	public void playListMenu() {
 		System.out.println("****************************************************");
-		System.out.println("        ******²¥·ÅÁÐ±í¹ÜÀí******  ");
-		System.out.println("        1--½«¸èÇúÌí¼Óµ½Ö÷²¥·ÅÁÐ±í  ");
-		System.out.println("        2--½«¸èÇúÌí¼Óµ½ÆÕÍ¨²¥·ÅÁÐ±í  ");
-		System.out.println("        3--Í¨¹ý¸èÇúid²éÑ¯²¥·ÅÁÐ±íÖÐµÄ¸èÇú ");
-		System.out.println("        4--Í¨¹ý¸èÇúÃû³Æ²éÑ¯²¥·ÅÁÐ±íÖÐµÄ¸èÇú");
-		System.out.println("        5--ÐÞ¸Ä²¥·ÅÁÐ±íÖÐµÄ¸èÇú   ");
-		System.out.println("        6--É¾³ý²¥·ÅÁÐ±íÖÐµÄ¸èÇú   ");
-		System.out.println("        7--ÏÔÊ¾²¥·ÅÁÐ±íÖÐµÄËùÓÐ¸èÇú");
-		System.out.println("        9--·Å»ØÉÏÒ»¼¶²Ëµ¥    ");
+		System.out.println("        ******ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ï¿½ï¿½ï¿½ï¿½******  ");
+		System.out.println("        1--ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Óµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½  ");
+		System.out.println("        2--ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Óµï¿½ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½  ");
+		System.out.println("        3--Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½idï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ï¿½ÐµÄ¸ï¿½ï¿½ï¿½ ");
+		System.out.println("        4--Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ²ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ï¿½ÐµÄ¸ï¿½ï¿½ï¿½");
+		System.out.println("        5--ï¿½Þ¸Ä²ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ï¿½ÐµÄ¸ï¿½ï¿½ï¿½   ");
+		System.out.println("        6--É¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ï¿½ÐµÄ¸ï¿½ï¿½ï¿½   ");
+		System.out.println("        7--ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ï¿½Ðµï¿½ï¿½ï¿½ï¿½Ð¸ï¿½ï¿½ï¿½");
+		System.out.println("        9--ï¿½Å»ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Ëµï¿½    ");
 		System.out.println("******************************************************");
 	}
 
-	// ²¥·ÅÆ÷²Ëµ¥
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ëµï¿½
 	public void playerMenu() {
 		System.out.println("*****************************************************");
-		System.out.println("              *****²¥·ÅÆ÷¹ÜÀí******");
-		System.out.println("        1--Ïò²¥·ÅÆ÷Ìí¼Ó²¥·ÅÁÐ±í  ");
-		System.out.println("        2--´Ó²¥·ÅÆ÷É¾³ý²¥·ÅÁÐ±í  ");
-		System.out.println("        3--Í¨¹ýÃû×Ö²éÑ¯²¥·ÅÁÐ±í ");
-		System.out.println("        4--ÏÔÊ¾ËùÓÐ²¥·ÅÁÐ±íÃû³Æ");
-		System.out.println("        9--·µ»ØÉÏÒ»¼¶²Ëµ¥   ");
+		System.out.println("              *****ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½******");
+		System.out.println("        1--ï¿½ò²¥·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó²ï¿½ï¿½ï¿½ï¿½Ð±ï¿½  ");
+		System.out.println("        2--ï¿½Ó²ï¿½ï¿½ï¿½ï¿½ï¿½É¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½  ");
+		System.out.println("        3--Í¨ï¿½ï¿½ï¿½ï¿½ï¿½Ö²ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ ");
+		System.out.println("        4--ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½Ð²ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ï¿½ï¿½ï¿½ï¿½");
+		System.out.println("        9--ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Ëµï¿½   ");
 		System.out.println("*****************************************************");
 	}
 
-	// Ö÷Á÷³Ì
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	public void test() {
 		Test tt = new Test();
 		Scanner sc = new Scanner(System.in);
 		int input = 0, input1 = 0, input2 = 0;
 		
-		//´´½¨Ò»¸ö²¥·ÅÁÐ±íÈÝÆ÷(²¥·ÅÆ÷)
+		//ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
 		PlayListCollection plc = new PlayListCollection();
-		//´´½¨Ö÷²¥·ÅÁÐ±í
-		PlayList mainPlayList = new PlayList("Ö÷²¥·ÅÁÐ±í");
-		//½«Ö÷²¥·ÅÁÐ±íÌí¼Óµ½²¥·ÅÆ÷
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½
+		PlayList mainPlayList = new PlayList("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½");
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ï¿½ï¿½ï¿½Óµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		plc.addPlayList(mainPlayList);
 		PlayList favouritePlayList = null;
 		while (true) {
 			tt.mainMenu();
-			System.out.println("ÇëÊäÈë¶ÔÓ¦Êý×Ö½øÐÐ²Ù×÷£º");
+			System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½Ö½ï¿½ï¿½Ð²ï¿½ï¿½ï¿½ï¿½ï¿½");
 			input = sc.nextInt();
 			if (input == 0) {
 				break;
@@ -164,148 +164,148 @@ public class Test {
 
 			switch (input) {
 			case 1:
-				// ²¥·ÅÁÐ±í¹ÜÀí
+				// ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ï¿½ï¿½ï¿½ï¿½
 				while (true) {
 					tt.playListMenu();
-					System.out.println("ÇëÊäÈë¶ÔÓ¦µÄÊý×Ö¶Ô²¥·ÅÁÐ±í½øÐÐ¹ÜÀí£º");
+					System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½ï¿½Ö¶Ô²ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ï¿½ï¿½ï¿½Ð¹ï¿½ï¿½ï¿½ï¿½ï¿½");
 					input1 = sc.nextInt();
 					if (input1 == 9) {
 						break;
 					}
 					switch (input1) {
 					case 1:
-						System.out.println("½«¸èÇúÌí¼Óµ½Ö÷²¥·ÅÁÐ±í"); 
-						System.out.println("ÇëÊäÈëÒªÌí¼ÓµÄ¸èÇúÊýÁ¿");
+						System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Óµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½"); 
+						System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ÓµÄ¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 						int count = sc.nextInt();
 						for(int i=1;i<=count;i++) {
-							System.out.println("ÇëÊäÈëµÚ" + i+ "Ê×¸èÇú:");
-							System.out.println("ÇëÊäÈë¸èÇúµÄid:");
+							System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" + i+ "ï¿½×¸ï¿½ï¿½ï¿½:");
+							System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½id:");
 							String strId = sc.next();
-							System.out.println("ÇëÊäÈë¸èÇúµÄÃû³Æ:");
+							System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:");
 							String strName = sc.next();
-							System.out.println("ÇëÊäÈëÑÝ³ªÕß:");
+							System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý³ï¿½ï¿½ï¿½:");
 							String strSinger = sc.next();
-							// ´´½¨¸èÇúÀà¶ÔÏó
+							// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 							Song song = new Song(strId,strName,strSinger);
 							mainPlayList.addToPlayList(song);
 						}
 						//mainPlayList.displayAllSong();
 						break;
 					case 2:
-						System.out.println("½«¸èÇúÌí¼Óµ½ÆÕÍ¨²¥·ÅÁÐ±í");
-						System.out.println("ÇëÊäÈëÒªÌí¼ÓµÄ²¥·ÅÁÐ±íÃû³Æ:");
+						System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Óµï¿½ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½");
+						System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ÓµÄ²ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ï¿½ï¿½ï¿½ï¿½:");
 						String sName = sc.next();
-						// ¸ù¾ÝÃû³ÆÅÐ¶Ï²¥·ÅÁÐ±íÊÇ·ñÔÚ²¥·ÅÆ÷ÖÐ´æÔÚ
+						// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶Ï²ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ï¿½Ç·ï¿½ï¿½Ú²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð´ï¿½ï¿½ï¿½
 						favouritePlayList = plc.searchPlayListByName(sName);
 						if(favouritePlayList == null) {
-							System.out.println("¸Ã²¥·ÅÁÐ±í²»´æÔÚ£¬ÇëÏÈ½«²¥·ÅÁÐ±íÌí¼Óµ½²¥·ÅÆ÷ÖÐ!");
+							System.out.println("ï¿½Ã²ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú£ï¿½ï¿½ï¿½ï¿½È½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ï¿½ï¿½ï¿½Óµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½!");
 						}else {
-							System.out.println("ÇëÊäÈëÒªÌí¼ÓµÄ¸èÇúÊýÁ¿");
+							System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ÓµÄ¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 							int count1 = sc.nextInt();
 							for(int i=1;i<=count1;i++) {
-								System.out.println("ÇëÊäÈëµÚ" + i+ "Ê×¸èÇú:");
-								System.out.println("ÇëÊäÈë¸èÇúµÄid:");
+								System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" + i+ "ï¿½×¸ï¿½ï¿½ï¿½:");
+								System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½id:");
 								String strId = sc.next();
 								
-								// Ê×ÏÈÅÐ¶Ï¸ÃidµÄ¸èÇúÊÇ·ñÔÚÖ÷²¥·ÅÁÐ±íÖÐ´æÔÚ
+								// ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶Ï¸ï¿½idï¿½Ä¸ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ï¿½Ð´ï¿½ï¿½ï¿½
 								Song song =  mainPlayList.searchSongById(strId);
 								if(song == null) {
-									// Èç¹û¸èÇú²»´æÔÚ£¬Ôò´´½¨ÐÂµÄÌí¼Ó£¬²¢ÇÒÌí¼Óµ½Ö÷²¥·ÅÁÐ±í
-									System.out.println("¸Ã¸èÇúÔÚÖ÷²¥·ÅÁÐ±íÖÐ²»´æÔÚ£¬¼ÌÐøÊäÈë¸èÇúµÄÆäËüÐÅÏ¢!");	
-									System.out.println("ÇëÊäÈë¸èÇúµÄÃû³Æ:");
+									// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú£ï¿½ï¿½ò´´½ï¿½ï¿½Âµï¿½ï¿½ï¿½ï¿½Ó£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Óµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½
+									System.out.println("ï¿½Ã¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ï¿½Ð²ï¿½ï¿½ï¿½ï¿½Ú£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢!");	
+									System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:");
 									String strName = sc.next();
-									System.out.println("ÇëÊäÈëÑÝ³ªÕß:");
+									System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý³ï¿½ï¿½ï¿½:");
 									String strSinger = sc.next();
-									// ´´½¨¸èÇúÀà¶ÔÏó
+									// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 									song = new Song(strId,strName,strSinger);
-									// ·Ö±ð½«¸èÇúÌí¼Óµ½ÆÕÍ¨²¥·ÅÁÐ±íºÍÖ÷²¥·ÅÁÐ±í
+									// ï¿½Ö±ð½«¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Óµï¿½ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½
 									favouritePlayList.addToPlayList(song);
 									mainPlayList.addToPlayList(song);
 								}else {
-									// Èç¹û¸èÇú´æÔÚÓëÖ÷²¥·Å·½·¨£¬ÔòÖ±½ÓÌí¼Óµ½ÏÖÔÚµÄ²¥·ÅÁÐ±í
+									// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö±ï¿½ï¿½ï¿½ï¿½ï¿½Óµï¿½ï¿½ï¿½ï¿½ÚµÄ²ï¿½ï¿½ï¿½ï¿½Ð±ï¿½
 									favouritePlayList.addToPlayList(song);
 								}
 							}
-							// ÏÔÊ¾²¥·ÅÁÐ±íµÄ¾ßÌåÐÅÏ¢
-							System.out.println("Ö÷²¥·ÅÁÐ±í");
+							// ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ï¿½Ä¾ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
+							System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½");
 							mainPlayList.displayAllSong();
-							System.out.println("ÆÕÍ¨²¥·ÅÁÐ±í");
+							System.out.println("ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½");
 							favouritePlayList.displayAllSong();
 						}
 						break;
 					case 3:
-						System.out.println("Í¨¹ý¸èÇúid²éÑ¯²¥·ÅÁÐ±íÖÐµÄ¸èÇú");
-						System.out.println("ÇëÊäÈëÒª²éÑ¯µÄ²¥·ÅÁÐ±íÃû³Æ:");
+						System.out.println("Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½idï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ï¿½ÐµÄ¸ï¿½ï¿½ï¿½");
+						System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½Ñ¯ï¿½Ä²ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ï¿½ï¿½ï¿½ï¿½:");
 						String strPlayListName1 = sc.next();
-						//²éÑ¯²¥·ÅÁÐ±íÊÇ·ñ´æÔÚ
+						//ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½
 						PlayList pl = plc.searchPlayListByName(strPlayListName1);
 						if(pl == null) {
-							System.out.println("¸Ã²¥·ÅÁÐ±í²»´æÔÚ");break;
+							System.out.println("ï¿½Ã²ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");break;
 						}else {
-							System.out.println("ÇëÊäÈëÒª²éÑ¯µÄ¸èÇúid£º");
+							System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½Ñ¯ï¿½Ä¸ï¿½ï¿½ï¿½idï¿½ï¿½");
 							String strId1 = sc.next();
 							Song s = pl.searchSongById(strId1);
 							if(s==null) {
-								System.out.println("¸Ã¸èÇúÔÚ²¥·ÅÁÐ±í"+ strPlayListName1 +"ÖÐ²»´æÔÚ");
+								System.out.println("ï¿½Ã¸ï¿½ï¿½ï¿½ï¿½Ú²ï¿½ï¿½ï¿½ï¿½Ð±ï¿½"+ strPlayListName1 +"ï¿½Ð²ï¿½ï¿½ï¿½ï¿½ï¿½");
 							}else {
-								System.out.println("¸Ã¸èÇúÐÅÏ¢Îª:");
+								System.out.println("ï¿½Ã¸ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢Îª:");
 								System.out.println(s);
 							}
 						}
 						break;
 					case 4:
-						System.out.println("Í¨¹ý¸èÇúÃû³Æ²éÑ¯²¥·ÅÁÐ±íÖÐµÄ¸èÇú");
+						System.out.println("Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ²ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ï¿½ÐµÄ¸ï¿½ï¿½ï¿½");
 						break;
 					case 5:
-						System.out.println("ÐÞ¸Ä²¥·ÅÁÐ±íÖÐµÄ¸èÇú");
+						System.out.println("ï¿½Þ¸Ä²ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ï¿½ÐµÄ¸ï¿½ï¿½ï¿½");
 						break;
 					case 6:
-						System.out.println("É¾³ý²¥·ÅÁÐ±íÖÐµÄ¸èÇú ");
+						System.out.println("É¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ï¿½ÐµÄ¸ï¿½ï¿½ï¿½ ");
 						break;
 					case 7:
-						System.out.println("ÏÔÊ¾²¥·ÅÁÐ±íÖÐµÄËùÓÐ¸èÇú");
+						System.out.println("ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ï¿½Ðµï¿½ï¿½ï¿½ï¿½Ð¸ï¿½ï¿½ï¿½");
 						break;
 					default:
-						System.out.println("¸ÃÊý×ÖÃ»ÓÐ¶ÔÓ¦²Ù×÷");
+						System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½Ð¶ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½");
 						break;
 					}
 				}
 				break;
 			case 2:
-				// ²¥·ÅÆ÷¹ÜÀí
+				// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 				while (true) {
 					tt.playerMenu();
-					System.out.println("ÇëÊäÈë¶ÔÓ¦µÄÊý×Ö¶Ô²¥·ÅÆ÷½øÐÐ¹ÜÀí£º");
+					System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½ï¿½Ö¶Ô²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¹ï¿½ï¿½ï¿½ï¿½ï¿½");
 					input2 = sc.nextInt();
 					if (input2 == 9)
 						break;
 					switch (input2) {
 					case 1:
-						System.out.println("Ïò²¥·ÅÆ÷Ìí¼Ó²¥·ÅÁÐ±í");
-						System.out.println("ÊäÈëÒªÌí¼ÓµÄÁÐ±íÃû³Æ:");
+						System.out.println("ï¿½ò²¥·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó²ï¿½ï¿½ï¿½ï¿½Ð±ï¿½");
+						System.out.println("ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½Óµï¿½ï¿½Ð±ï¿½ï¿½ï¿½ï¿½ï¿½:");
 						String playerName = sc.next();
-						// ´´½¨Ò»¸öÐÂµÄ²¥·ÅÁÐ±í¶ÔÏó
+						// ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ÂµÄ²ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ï¿½ï¿½ï¿½ï¿½
 						favouritePlayList = new PlayList(playerName);
-						// ½«²¥·ÅÁÐ±íÌí¼Óµ½²¥·ÅÆ÷Map
+						// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ï¿½ï¿½ï¿½Óµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Map
 						plc.addPlayList(favouritePlayList);
 						break;
 					case 2:
-						System.out.println("´Ó²¥·ÅÆ÷É¾³ý²¥·ÅÁÐ±í");
+						System.out.println("ï¿½Ó²ï¿½ï¿½ï¿½ï¿½ï¿½É¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½");
 						break;
 					case 3:
-						System.out.println("Í¨¹ýÃû×Ö²éÑ¯²¥·ÅÁÐ±íÐÅÏ¢");
+						System.out.println("Í¨ï¿½ï¿½ï¿½ï¿½ï¿½Ö²ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ï¿½ï¿½Ï¢");
 						break;
 					case 4:
-						System.out.println("ÏÔÊ¾ËùÓÐ²¥·ÅÁÐ±íÃû³Æ");
+						System.out.println("ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½Ð²ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ï¿½ï¿½ï¿½ï¿½");
 						break;
 					default:
-						System.out.println("¸ÃÊý×ÖÃ»ÓÐ¶ÔÓ¦²Ù×÷");
+						System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½Ð¶ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½");
 						break;
 					}
 				}
 				break;
 			default:
-				System.out.println("¸ÃÊý×ÖÃ»ÓÐ¶ÔÓ¦²Ù×÷");
+				System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½Ð¶ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½");
 				break;
 			}
 
