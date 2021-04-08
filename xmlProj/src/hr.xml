@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hr SYSTEM "hr.dtd">
+<!-- 人力资源管理系统 -->
+<hr>
+	<employee no="1111">
+		<name>张三</name>
+		<age>31</age>
+		<salary>4000</salary>
+		<department>
+			<dname>会计部</dname>
+			<address>xx大夏-B103</address>
+		</department>
+	</employee>
+	<employee>
+		<name>李四</name>
+		<age>33</age>
+		<salary>6000</salary>
+		<department>
+			<dname>工程部</dname>
+			<address>xx大夏-B105</address>
+		</department>
+	</employee>
+</hr>
