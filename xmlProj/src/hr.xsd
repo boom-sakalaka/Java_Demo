@@ -30,7 +30,6 @@
 				</complexType>
 			</element>
 		</sequence>
-		
 	</complexType>
 </element>
 </schema>
