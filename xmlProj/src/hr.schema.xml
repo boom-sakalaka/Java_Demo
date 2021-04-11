@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 人力资源管理系统 -->
+<hr xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="hr.xsd">
+	<employee no="1111">
+		<name>张三</name>
+		<age>31</age>
+		<salary>4000</salary>
+		<department>
+			<dname>会计部</dname>
+			<address>xx大夏-B103</address>
+		</department>
+	</employee>
+	<employee no="2222">
+		<name>李四</name>
+		<age>56</age>
+		<salary>6000</salary>
+		<department>
+			<dname>工程部</dname>
+			<address>xx大夏-B105</address>
+		</department>
+	</employee>
+</hr>
