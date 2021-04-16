@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>学员信息登记表</title>
+</head>
+<body>
+	<h1>学员信息登记表</h1>
+	<form action="/FirstServlet/requestMathod" method="get" >
+		姓名：<input name="name"/>
+		<br/>
+		电话：<input name="mobile"/>
+		<br/>
+		性别：
+		<select name="sex" style="width:100px;padding:5px;">
+			<option value="male" >男</option>
+			<option value="female">女</option>
+		</select>
+		<br/>
+		特长:
+		<input type="checkbox" name="spec" value="English"/>英语
+		<input type="checkbox" name="spec" value="Program"/>编程
+		<input type="checkbox" name="spec" value="Speech"/>演讲
+		<input type="checkbox" name="spec" value="Swimming"/>游泳
+		<br/>
+		<input type="submit" value="提交">
+		<br/>
+	</form>
+</body>
+</html>

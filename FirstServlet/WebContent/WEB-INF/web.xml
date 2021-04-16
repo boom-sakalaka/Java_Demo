@@ -10,13 +10,30 @@
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
    <servlet>
-  	<servlet-name>
-  		first
-  	</servlet-name>
+  	<servlet-name>first</servlet-name>
   	<servlet-class>com.imooc.servlet.FirstServlet</servlet-class>
   </servlet>
   <servlet-mapping>
   	<servlet-name>first</servlet-name>
   	<url-pattern>/hi</url-pattern>
   </servlet-mapping>
+  
+   <servlet>
+  	<servlet-name>sample</servlet-name>
+  	<servlet-class>com.imooc.servlet.SampleServlet</servlet-class>
+  </servlet>
+   <servlet-mapping>
+  	<servlet-name>sample</servlet-name>
+  	<url-pattern>/sample</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+  	<servlet-name>requestMathod</servlet-name>
+  	<servlet-class>com.imooc.servlet.RequestMethodServlet</servlet-class>
+  </servlet>
+   <servlet-mapping>
+  	<servlet-name>requestMathod</servlet-name>
+  	<url-pattern>/requestMathod</url-pattern>
+  </servlet-mapping>
+  
 </web-app>
