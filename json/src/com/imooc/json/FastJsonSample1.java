@@ -19,6 +19,8 @@ public class FastJsonSample1 {
 		//FashJson ¶ÔÏó×ªjson
 		String json =  JSON.toJSONString(employee);
 		System.out.println(json);
+		Employee emp =   JSON.parseObject(json,Employee.class);
+		System.out.println(emp.getDname());
 		
 	}
 }
