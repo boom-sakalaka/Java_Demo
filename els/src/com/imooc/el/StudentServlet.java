@@ -27,7 +27,7 @@ public class StudentServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Student stu = new Student();
-		stu.setName("×ÓÄ«");
+		stu.setName("å­å¢¨");
 		stu.setMobile(null);
 		
 		String grade = "A";
