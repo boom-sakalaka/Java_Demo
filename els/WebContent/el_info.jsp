@@ -7,8 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1> 姓名1: ${student.name }</h1>
-<h1> 电话1: ${student.mobile }</h1>
-<h1> 评级1: ${grade}</h1>
+<h1> 姓名: ${requestScope.student.name }</h1>
+<h1> 电话: ${requestScope.student.mobile }</h1>
+<h2>讲师:${ param.teacher }</h2>
+<h1> 评级: ${requestScope.grade }</h1>
 </body>
 </html>
