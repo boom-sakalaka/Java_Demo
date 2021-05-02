@@ -9,16 +9,20 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
+import javax.servlet.annotation.WebInitParam;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebFilter(filterName = "CharacterEncodingFilter",urlPatterns = "/*")
+@WebFilter(filterName = "CharacterEncodingFilter",urlPatterns = "/*",initParams = {
+		@WebInitParam(name="encoding",value="UTF-8")
+})
 public class CharacterEncodingFilter implements Filter {
-
+	private String encoding;
+	
 	@Override
 	public void destroy() {
 		// TODO Auto-generated method stub
-
+		
 	}
 
 	@Override
@@ -26,16 +30,17 @@ public class CharacterEncodingFilter implements Filter {
 			throws IOException, ServletException {
 		// TODO Auto-generated method stub
 		HttpServletRequest req =  (HttpServletRequest)request;
-		req.setCharacterEncoding("UTF-8");
+		req.setCharacterEncoding(encoding);
 		HttpServletResponse res = (HttpServletResponse)response;
-		res.setContentType("text/html;charset=UTF-8");
+		res.setContentType("text/html;charset=" + encoding);
 		chain.doFilter(request, response);
 	}
 
 	@Override
 	public void init(FilterConfig filterConfig) throws ServletException {
 		// TODO Auto-generated method stub
-
+		encoding = filterConfig.getInitParameter("encoding");
+		System.out.println("encoding:" + encoding);
 	}
 
 }
