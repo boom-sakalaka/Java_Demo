@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿<%@page contentType="text/html;charset=utf-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -7,15 +10,21 @@
 	<script type="text/javascript" src="js\js1.js"></script>
 </head>
 <body>
+	<c:if test="${param.c != null }">
+		<c:set var="categoryParam" value="&c=${param.c}"></c:set>
+	</c:if>
+	<c:if test="${param.c == null }">
+		<c:set var="categoryParam" value=""></c:set>
+	</c:if>
 	<div class="header">
 		<div class="logo">
 			<img src="image\logo.png">
 		</div>
 		<div class="menu"   onclick="show_menu()" onmouseleave="show_menu1()">
-			 <div class="menu_title" ><a href="###">内容分类</a></div>
+			 <div class="menu_title"><a href="###">内容分类</a></div>
 			 <ul id="title">
-				<li>现实主义</li>
-				<li>抽象主义</li>
+				<li><a href="/page?c=1">现实主义</a></li>
+				<li><a href="/page?c=2">抽象主义</a></li>
 			 </ul>
 		</div>
 		<div class="auth">
@@ -31,15 +40,18 @@
 	  </div>
 	  <div class="img-content">
 		<ul>
-			<li>
-				<img src="image/wumingnvlang.jpg" class="img-li">
+		<c:forEach items="${pageModel.pageData }" var="painting">
+				<li>
+				<img src="${painting.preview}" class="img-li">
 				<div class="info">
-					<h3>无名女郎</h3>
+					<h3>${painting.pname}</h3>
 					<p>
-						图片描述可以分为多种，一种是单一说明，就比如直接的告诉看图者这篇文 章是要介绍什么样子的内容，一些配图可以分为含蓄类型的，这样的配图一般会 图片描述可以分为多种.
+						${painting.description }
 					</p>
 					<div class="img-btn">
-						<div class="price">￥5800</div>
+						<div class="price">
+						<fmt:formatNumber pattern="￥0.00">${painting.price }	</fmt:formatNumber>
+						</div>
 							<a href="#" class="cart">
 						       <div class="btn">
 							      <img src="image/cart.svg">
@@ -48,107 +60,23 @@
 					</div>
 				</div>
 			</li>
-			<li>
-				<img src="image/wumingnvlang.jpg" class="img-li">
-				<div class="info">
-					<h3>无名女郎</h3>
-					<p>
-						图片描述可以分为多种，一种是单一说明，就比如直接的告诉看图者这篇文 章是要介绍什么样子的内容，一些配图可以分为含蓄类型的，这样的配图一般会 图片描述可以分为多种.
-					</p>
-					<div class="img-btn">
-						<div class="price">￥5800</div>
-						<div class="btn">
-							<a href="#" class="cart">
-							   <img src="image/cart.svg">
-							 </a>
-						</div>
-					</div>
-				</div>
-			</li>
-			<li>
-				<img src="image/wumingnvlang.jpg" class="img-li">
-				<div class="info">
-					<h3>无名女郎</h3>
-					<p>
-						图片描述可以分为多种，一种是单一说明，就比如直接的告诉看图者这篇文 章是要介绍什么样子的内容，一些配图可以分为含蓄类型的，这样的配图一般会 图片描述可以分为多种.
-					</p>
-					<div class="img-btn">
-						<div class="price">￥5800</div>
-						<div class="btn">
-							<a href="#" class="cart">
-							   <img src="image/cart.svg">
-							 </a>
-						</div>
-					</div>
-				</div>
-			</li>
-			<li>
-				<img src="image/wumingnvlang.jpg" class="img-li">
-				<div class="info">
-					<h3>无名女郎</h3>
-					<p>
-						图片描述可以分为多种，一种是单一说明，就比如直接的告诉看图者这篇文 章是要介绍什么样子的内容，一些配图可以分为含蓄类型的，这样的配图一般会 图片描述可以分为多种.
-					</p>
-					<div class="img-btn">
-						<div class="price">￥5800</div>
-						<div class="btn">
-							<a href="#" class="cart">
-							   <img src="image/cart.svg">
-							 </a>
-						</div>
-					</div>
-				</div>
-			</li>
-			<li>
-				<img src="image/wumingnvlang.jpg" class="img-li">
-				<div class="info">
-					<h3>无名女郎</h3>
-					<p>
-						图片描述可以分为多种，一种是单一说明，就比如直接的告诉看图者这篇文 章是要介绍什么样子的内容，一些配图可以分为含蓄类型的，这样的配图一般会 图片描述可以分为多种.
-					</p>
-					<div class="img-btn">
-						<div class="price">￥5800</div>
-						<div class="btn">
-							<a href="#" class="cart">
-							   <img src="image/cart.svg">
-							 </a>
-						</div>
-					</div>
-				</div>
-			</li>
-			<li>
-				<img src="image/wumingnvlang.jpg" class="img-li">
-				<div class="info">
-					<h3>无名女郎</h3>
-					<p>
-						图片描述可以分为多种，一种是单一说明，就比如直接的告诉看图者这篇文 章是要介绍什么样子的内容，一些配图可以分为含蓄类型的，这样的配图一般会 图片描述可以分为多种.
-					</p>
-					<div class="img-btn">
-						<div class="price">￥5800</div>
-						<div class="btn">
-							<a href="#" class="cart">
-							   <img src="image/cart.svg">
-							 </a>
-						</div>
-					</div>
-				</div>
-			</li>
+	
+		</c:forEach>
 		</ul>
 	  </div>
 	  <div class="page-nav">
 		<ul>
-			<li><a href="#">首页</a></li>
-			<li><a href="#">上一页</a></li>
-			<li><span class="first-page">1</span></li>
-			<li><a href="#">2</a></li>
-			<li><a href="#">3</a></li>
-			<li><a href="#">4</a></li>
-			<li><a href="#">5</a></li>
-			<li><a href="#">…</a></li>
-			<li><a href="#">98</a></li>
-			<li><a href="#">99</a></li>
-			<li><a href="#">下一页</a></li>
-			<li><a href="#">尾页</a></li>
+			<li><a href="/page?p=1${categoryParam }">首页</a></li>
+			<li><a href="/page?p=${pageModel.hasPreviousPage ? pageModel.page-1:1 }${categoryParam}">上一页</a></li>
+			<c:forEach begin="1" end="${pageModel.totalPages }" var="pno" step="1">
+				<li>
+				<a href="/page?p=${ pno}${categoryParam}">
+					<span ${pno==pageModel.page? "class='first-page'" : ""} >${pno }</span>
+				</a>
+				</li>
+			</c:forEach>
+			<li><a href="/page?p=${pageModel.hasPreviousPage ? pageModel.page+1 : pageModel.totalPages }${categoryParam}">下一页</a></li>
+			<li><a href="/page?p=${pageModel.totalPages }${categoryParam}">尾页</a></li>
 		</ul>
 	  </div>
 	</div>
