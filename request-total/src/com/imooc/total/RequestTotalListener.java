@@ -9,6 +9,7 @@ import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.ServletRequestEvent;
 import javax.servlet.ServletRequestListener;
+import javax.servlet.http.HttpServletRequest;
 
 public class RequestTotalListener implements ServletContextListener,ServletRequestListener {
 
@@ -21,6 +22,11 @@ public class RequestTotalListener implements ServletContextListener,ServletReque
 	@Override
 	public void requestInitialized(ServletRequestEvent sre) {
 		// TODO Auto-generated method stub
+		HttpServletRequest request = (HttpServletRequest)sre.getServletRequest();
+		String url = request.getRequestURI().toString();
+		if(url.endsWith("/rt") == true) {
+			return;
+		}
 		List<String> timeList = (List)sre.getServletContext().getAttribute("timeList");
 		List<Integer> valueList = (List)sre.getServletContext().getAttribute("valueList");
 		
