@@ -41,7 +41,7 @@ public class PaintingController extends HttpServlet {
 		}
 		PageModel  pageModel =  paintingServie.pagination(Integer.parseInt(page), Integer.parseInt(rows),category);
 		request.setAttribute("pageModel", pageModel);
-		request.getRequestDispatcher("/WEB-INF/jsp/index.jsp").forward(request, response);;
+		request.getRequestDispatcher("/WEB-INF/jsp/index.jsp").forward(request, response);
 	}
 
 }
