@@ -75,7 +75,7 @@
 				</a>
 				</li>
 			</c:forEach>
-			<li><a href="/page?p=${pageModel.hasPreviousPage ? pageModel.page+1 : pageModel.totalPages }${categoryParam}">下一页</a></li>
+			<li><a href="/page?p=${pageModel.hasNextPage ? pageModel.page+1 : pageModel.totalPages }${categoryParam}">下一页</a></li>
 			<li><a href="/page?p=${pageModel.totalPages }${categoryParam}">尾页</a></li>
 		</ul>
 	  </div>
