@@ -28,7 +28,7 @@
 		<fieldset>
 			<legend>油画列表</legend>
 			<div style="height: 40px">
-				<a href="#" class="btn-button">新增</a>
+				<a href="/management?method=show_create" class="btn-button">新增</a>
 			</div>
 			<!-- 油画列表 -->
 			<table cellspacing="0px">

@@ -19,6 +19,13 @@ public class PaintingService {
 		}
 	}
 	
+	/**
+	 * 新增油画
+	 * @param painting 准备新增的Painting数据
+	 */
+	public void create(Painting painting) {
+		paintingDao.create(painting);
+	}
 //	public static void main(String [] args) {
 //		PaintingService paintingService = new PaintingService();
 //		PageModel pageModel = paintingService.pagination(2, 6);
