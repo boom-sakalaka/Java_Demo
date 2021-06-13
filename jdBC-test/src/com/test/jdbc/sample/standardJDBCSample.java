@@ -20,17 +20,17 @@ public class standardJDBCSample {
             // 4. 遍历查询结果
             while (rs.next()) {
                 Integer eno = rs.getInt(1);
-                String ename = rs.getString("ename");
+                String e_name = rs.getString("ename");
                 Float salary = rs.getFloat("salary");
-                String dname = rs.getString("dname");
-                System.out.println(dname + "-" + eno + "-" + ename + "-" + salary);
+                String d_name = rs.getString("dname");
+                System.out.println(d_name + "-" + eno + "-" + e_name + "-" + salary);
             }
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
             try {
                 // 5. 关闭连接，释放资源
-                if (conn != null && conn.isClosed() == false) {
+                if (conn != null && !conn.isClosed()) {
                     conn.close();
                 }
             } catch (Exception e) {
