@@ -20,10 +20,9 @@ public class PstmtQueryCommand implements Command {
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/imooc?useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai",
                     "root", "root");
             // 3. 创建Statement对象
-            String sql = "select * from employee where dname=? and eno > ?";
+            String sql = "select * from employee where dname=?";
             pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, pdname);
-            pstmt.setInt(2,3500);
             rs = pstmt.executeQuery();
 //            stmt = conn.createStatement();
 //            rs = stmt.executeQuery("select * from employee where dname='" + pdname + "'");
