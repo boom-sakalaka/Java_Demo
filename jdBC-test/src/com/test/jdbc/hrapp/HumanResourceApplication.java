@@ -1,7 +1,6 @@
 package com.test.jdbc.hrapp;
 
 import com.test.jdbc.hrapp.command.*;
-//import com.test.jdbc.hrapp.command.QueryCommand;
 
 import java.util.Scanner;
 
