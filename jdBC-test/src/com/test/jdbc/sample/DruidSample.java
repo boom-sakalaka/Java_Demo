@@ -34,7 +34,9 @@ public class DruidSample {
         try {
             DataSource dataSource =  DruidDataSourceFactory.createDataSource(properties);
             // 3. 创建数据库连接
-             conn = dataSource.getConnection();
+            for(int i = 0;i<20;i++){
+                conn = dataSource.getConnection();
+            }
              pstmt = conn.prepareStatement("select * from employee limit 0,10");
              rs = pstmt.executeQuery();
 
@@ -49,6 +51,10 @@ public class DruidSample {
         } catch (Exception e) {
             e.printStackTrace();
         }finally {
+            /**
+             * 不使用连接池，conn.close() 关闭连接
+             * 使用连接池，conn.close() 将连接回收至连接池
+             */
             DbUtils.closeConnection(rs,pstmt,conn);
         }
     }
