@@ -1,5 +1,7 @@
 package com.test.jdbc.hrapp.entity;
 
+import java.util.Date;
+
 /**
  * 员工实体类
  */
@@ -16,6 +18,15 @@ public class Employee {
     private String  ename;
     private Float salary;
     private String dname;
+    private Date hiredate;
+
+    public Date getHiredate() {
+        return hiredate;
+    }
+
+    public void setHiredate(Date hiredate) {
+        this.hiredate = hiredate;
+    }
 
     public Integer getEno() {
         return eno;

@@ -3,10 +3,7 @@ package com.test.jdbc.hrapp.command;
 import com.test.jdbc.common.DbUtils;
 import com.test.jdbc.hrapp.entity.Employee;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -32,11 +29,13 @@ public class PaginationCommand implements Command {
                 String ename = rs.getString("ename");
                 Float salary = rs.getFloat("salary");
                 String dname = rs.getString("dname");
+                Date hiredate =  rs.getDate("hiredate");
                 Employee emp = new Employee();
                 emp.setEno(eno);
                 emp.setEname(ename);
                 emp.setSalary(salary);
                 emp.setDname(dname);
+                emp.setHiredate(hiredate);
                 list.add(emp);
             }
             System.out.println(list.size());
