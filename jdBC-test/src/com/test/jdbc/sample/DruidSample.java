@@ -19,7 +19,7 @@ public class DruidSample {
     public static void main(String[] args) {
         // 1. 加载属性文件
         Properties properties = new Properties();
-       String propertyFile =  DruidSample.class.getResource("/druid-config.properties").getPath();
+        String propertyFile = DruidSample.class.getResource("/druid-config.properties").getPath();
         try {
             propertyFile = new URLDecoder().decode(propertyFile, "UTF-8");
             properties.load(new FileInputStream(propertyFile));
@@ -32,13 +32,13 @@ public class DruidSample {
         PreparedStatement pstmt = null;
         ResultSet rs = null;
         try {
-            DataSource dataSource =  DruidDataSourceFactory.createDataSource(properties);
+            DataSource dataSource = DruidDataSourceFactory.createDataSource(properties);
             // 3. 创建数据库连接
-            for(int i = 0;i<20;i++){
+            for (int i = 0; i < 20; i++) {
                 conn = dataSource.getConnection();
             }
-             pstmt = conn.prepareStatement("select * from employee limit 0,10");
-             rs = pstmt.executeQuery();
+            pstmt = conn.prepareStatement("select * from employee limit 0,10");
+            rs = pstmt.executeQuery();
 
             // 4. 遍历查询结果
             while (rs.next()) {
@@ -50,12 +50,12 @@ public class DruidSample {
             }
         } catch (Exception e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             /**
              * 不使用连接池，conn.close() 关闭连接
              * 使用连接池，conn.close() 将连接回收至连接池
              */
-            DbUtils.closeConnection(rs,pstmt,conn);
+            DbUtils.closeConnection(rs, pstmt, conn);
         }
     }
 }
