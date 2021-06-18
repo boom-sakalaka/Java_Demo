@@ -2,6 +2,7 @@ package com.test.lambda;
 
 public class LambdaSample {
     public static void main(String[] args) {
+        // Lambda 表达式只能实现有且只有一个抽象方法的接口，Java 称之为 “函数式接口”
         //1. 标准使用方式
         MathOperation addition = (Integer a, Integer b) -> {
             System.out.println("加法运算");
