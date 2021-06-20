@@ -221,4 +221,70 @@ public class MybatisTestor {
             MybatisUtils.closeSession(session);
         }
     }
+    @Test
+    public void testLv1Cache() {
+        SqlSession sqlSession = null;
+        try {
+            sqlSession = MybatisUtils.openSession();
+            Goods goods = sqlSession.selectOne("goods.selectById", 1604);
+            Goods goods1 = sqlSession.selectOne("goods.selectById", 1604);
+            System.out.println(goods.getTitle());
+            System.out.println(goods.hashCode() + ":" + goods1.hashCode());
+        } catch (Exception e) {
+            throw e;
+        } finally {
+            MybatisUtils.closeSession(sqlSession);
+        }
+
+        try {
+            sqlSession = MybatisUtils.openSession();
+            Goods goods = sqlSession.selectOne("goods.selectById", 1604);
+            sqlSession.commit(); // 一级缓存只在sision周期里面有，commit后就会清空
+            Goods goods1 = sqlSession.selectOne("goods.selectById", 1604);
+            System.out.println(goods.getTitle());
+            System.out.println(goods.hashCode() + ":" + goods1.hashCode());
+        } catch (Exception e) {
+            throw e;
+        } finally {
+            MybatisUtils.closeSession(sqlSession);
+        }
+    }
+    @Test
+    public void testLv2Cache() {
+        SqlSession sqlSession = null;
+        try {
+            sqlSession = MybatisUtils.openSession();
+            Goods goods = sqlSession.selectOne("goods.selectById", 1604);
+            System.out.println(goods.hashCode());
+        } catch (Exception e) {
+            throw e;
+        } finally {
+            MybatisUtils.closeSession(sqlSession);
+        }
+
+        try {
+            sqlSession = MybatisUtils.openSession();
+            Goods goods = sqlSession.selectOne("goods.selectById", 1604);
+            System.out.println(goods.hashCode());
+        } catch (Exception e) {
+            throw e;
+        } finally {
+            MybatisUtils.closeSession(sqlSession);
+        }
+    }
+    @Test
+    public void testOneToMany() throws Exception {
+        SqlSession session = null;
+        try{
+            session = MybatisUtils.openSession();
+            List<Goods> list = session.selectList("goods.selectOneToMany");
+            for (Goods goods : list){
+                System.out.println(goods.getTitle() + ":" + goods.getGoodsDetailList().size());
+            }
+        }catch (Exception e){
+            throw e;
+        }finally {
+            MybatisUtils.closeSession(session);
+        }
+    }
 }

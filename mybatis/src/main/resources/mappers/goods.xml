@@ -3,18 +3,36 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="goods">
-    <select id="selectAll" resultType="com.test.mybatis.entity.Goods">
+    <!--开启了二级缓存
+           eviction是缓存的清除策略,当缓存对象数量达到上限后,自动触发对应算法对缓存对象清除
+               1.LRU – 最近最久未使用:移除最长时间不被使用的对象。
+               O1 O2 O3 O4 .. O512
+               14 99 83 1     893
+               2.FIFO – 先进先出:按对象进入缓存的顺序来移除它们。
+               3.SOFT – 软引用:移除基于垃圾收集器状态和软引用规则的对象。
+               4.WEAK – 弱引用:更积极的移除基于垃圾收集器状态和弱引用规则的对象。
+
+               flushInterval: 代表多长时间自动清空缓存，
+               size: 数量上限 list集合也算一个
+               readOnly: true 直接拿到对象本身，效率较高
+               false： 返回的是副本，安全性较高
+       -->
+    <cache eviction="LRU" flushInterval="600000" size="512" readOnly="true" />
+    <!--    全局查询数据量太大，不建议放入缓存,内存压力过大 最好只缓存单个 实体的查询-->
+    <select id="selectAll" resultType="com.test.mybatis.entity.Goods" useCache="false">
         select * from t_goods order by goods_id desc limit 10
     </select>
     <select id="selectById" parameterType="Integer" resultType="com.test.mybatis.entity.Goods">
         select * from t_goods where goods_id = #{value }
     </select>
+
     <select id="selectByPriceRange" parameterType="java.util.Map" resultType="com.test.mybatis.entity.Goods">
         select * from t_goods where current_price
         between #{min} and #{max}
         order  by current_price
         limit 0,#{limt}
     </select>
+
     <select id="selectGoodsMap" resultType="java.util.LinkedHashMap">
         select g.*,c.category_name, "1" as test from t_goods g,t_category c
         where g.category_id = c.category_id
@@ -44,7 +62,9 @@
         select g.*,c.*, "1" as test from t_goods g,t_category c
         where g.category_id = c.category_id
     </select>
-    <insert id="insert" parameterType="com.test.mybatis.entity.Goods">
+
+    <!--    执行完sql 立即清空缓存-->
+    <insert id="insert" parameterType="com.test.mybatis.entity.Goods" flushCache="true">
         INSERT INTO t_goods(title, sub_title, original_cost, current_price, discount, is_free_delivery, category_id)
         VALUES (#{title} , #{subTitle} , #{originalCost}, #{currentPrice}, #{discount}, #{isFreeDelivery}, #{categoryId})
         <selectKey resultType="Integer" keyProperty="goodsId" order="AFTER">
@@ -78,5 +98,13 @@
                 and current_price &lt; #{currentPrice}
             </if>
         </where>
+    </select>
+
+    <resultMap id="rmGoods1" type="com.test.mybatis.entity.Goods">
+        <id column="goods_id" property="goodsId"></id>
+        <collection property="goodsDetailList" select="goodsDetail.selectByGoodsId" column="goods_id"></collection>
+    </resultMap>
+    <select id="selectOneToMany" resultMap="rmGoods1">
+        select * from t_goods limit 0,1;
     </select>
 </mapper>

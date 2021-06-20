@@ -1,5 +1,7 @@
 package com.test.mybatis.entity;
 
+import java.util.List;
+
 public class Goods {
     private Integer goodsId;
     private String title;
@@ -9,7 +11,15 @@ public class Goods {
     private Float discount;
     private Integer isFreeDelivery;
     private Integer categoryId;
+    private List<GoodsDetail> goodsDetailList;
 
+    public List<GoodsDetail> getGoodsDetailList() {
+        return goodsDetailList;
+    }
+
+    public void setGoodsDetailList(List<GoodsDetail> goodsDetailList) {
+        this.goodsDetailList = goodsDetailList;
+    }
 
     public Integer getGoodsId() {
         return goodsId;
