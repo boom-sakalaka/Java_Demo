@@ -5,6 +5,7 @@ public class GoodsDetail {
     private Integer goodsId;
     private String gdPicUrl;
     private Integer gdOrder;
+    private Goods goods;
 
     public Integer getGdId() {
         return gdId;
@@ -36,5 +37,13 @@ public class GoodsDetail {
 
     public void setGdOrder(Integer gdOrder) {
         this.gdOrder = gdOrder;
+    }
+
+    public Goods getGoods() {
+        return goods;
+    }
+
+    public void setGoods(Goods goods) {
+        this.goods = goods;
     }
 }
