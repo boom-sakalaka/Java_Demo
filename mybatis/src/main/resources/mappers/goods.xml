@@ -15,4 +15,8 @@
         order  by current_price
         limit 0,#{limt}
     </select>
+    <select id="selectGoodsMap" resultType="java.util.LinkedHashMap">
+        select g.*,c.category_name from t_goods g,t_category c
+        where g.category_id = c.category_id
+    </select>
 </mapper>

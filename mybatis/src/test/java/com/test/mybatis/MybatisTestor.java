@@ -102,4 +102,20 @@ public class MybatisTestor {
             MybatisUtils.closeSession(sqlSession);
         }
     }
+    @Test
+    public void testSelectGoodsMap () {
+        SqlSession sqlSession = null;
+        try {
+            sqlSession = MybatisUtils.openSession();
+            // 使用map返回数据，不知道map里面有什么数据，可能会导致出错
+            List<Map> list = sqlSession.selectList("goods.selectGoodsMap");
+            for(Map map : list){
+                System.out.println(map);
+            }
+        } catch (Exception e) {
+            throw e;
+        } finally {
+            MybatisUtils.closeSession(sqlSession);
+        }
+    }
 }
