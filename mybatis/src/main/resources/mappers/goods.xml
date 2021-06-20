@@ -51,4 +51,21 @@
         select last_insert_id()
         </selectKey>
     </insert>
+    <update id="update" parameterType="com.test.mybatis.entity.Goods">
+        UPDATE t_goods
+        SET
+            title = #{title} ,
+            sub_title = #{subTitle} ,
+            original_cost = #{originalCost} ,
+            current_price = #{currentPrice} ,
+            discount = #{discount} ,
+            is_free_delivery = #{isFreeDelivery} ,
+            category_id = #{categoryId}
+        WHERE
+            goods_id = #{goodsId}
+    </update>
+    <!--delete from t_goods where goods_id in (1920,1921)-->
+    <delete id="delete" parameterType="Integer">
+        delete from t_goods where goods_id = #{value}
+    </delete>
 </mapper>

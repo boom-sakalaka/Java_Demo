@@ -162,4 +162,44 @@ public class MybatisTestor {
             MybatisUtils.closeSession(sqlSession);
         }
     }
+
+    @Test
+    public void testUpdata(){
+        SqlSession sqlSession = null;
+        try {
+            sqlSession = MybatisUtils.openSession();
+            Goods goods = sqlSession.selectOne("goods.selectById",739);
+            goods.setTitle("更新测试商品");
+            int update = sqlSession.update("goods.update", goods);
+            sqlSession.commit();
+        } catch (Exception e) {
+            if(sqlSession  != null){
+                sqlSession.rollback();
+            }
+            throw e;
+        } finally {
+            MybatisUtils.closeSession(sqlSession);
+        }
+    }
+    /**
+     * 删除数据
+     * @throws Exception
+     */
+    @Test
+    public void testDelete() throws Exception {
+        SqlSession session = null;
+        try{
+            session = MybatisUtils.openSession();
+            int num = session.delete("goods.delete" , 739);
+            System.out.println(num);
+            session.commit();//提交事务数据
+        }catch (Exception e){
+            if(session != null){
+                session.rollback();//回滚事务
+            }
+            throw e;
+        }finally {
+            MybatisUtils.closeSession(session);
+        }
+    }
 }
