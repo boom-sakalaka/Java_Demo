@@ -11,7 +11,9 @@ import org.junit.Test;
 import java.io.IOException;
 import java.io.Reader;
 import java.sql.Connection;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class MybatisTestor {
     @Test
@@ -49,18 +51,54 @@ public class MybatisTestor {
             MybatisUtils.closeSession(sqlSession);
         }
     }
+
     @Test
     public void testSelectAll() {
         SqlSession sqlSession = null;
         try {
             sqlSession = MybatisUtils.openSession();
-            List<Goods> list =  sqlSession.selectList("goods.selectAll");
-            for(Goods goods : list){
+            List<Goods> list = sqlSession.selectList("goods.selectAll");
+            for (Goods goods : list) {
                 System.out.println(goods.getTitle());
             }
-        }catch (Exception e){
-            throw  e;
-        }finally {
+        } catch (Exception e) {
+            throw e;
+        } finally {
+            MybatisUtils.closeSession(sqlSession);
+        }
+    }
+
+    @Test
+    public void testSelectById() {
+        SqlSession sqlSession = null;
+        try {
+            sqlSession = MybatisUtils.openSession();
+            Goods goods = sqlSession.selectOne("goods.selectById", 1604);
+            System.out.println(goods.getTitle());
+
+        } catch (Exception e) {
+            throw e;
+        } finally {
+            MybatisUtils.closeSession(sqlSession);
+        }
+    }
+
+    @Test
+    public void testSelectByPriceRange() {
+        SqlSession sqlSession = null;
+        try {
+            sqlSession = MybatisUtils.openSession();
+            Map param = new HashMap();
+            param.put("min", 100);
+            param.put("max", 500);
+            param.put("limt", 10);
+            List<Goods> list = sqlSession.selectList("goods.selectByPriceRange", param);
+            for (Goods goods : list) {
+                System.out.println(goods.getTitle()+ ":" + goods.getCurrentPrice());
+            }
+        } catch (Exception e) {
+            throw e;
+        } finally {
             MybatisUtils.closeSession(sqlSession);
         }
     }

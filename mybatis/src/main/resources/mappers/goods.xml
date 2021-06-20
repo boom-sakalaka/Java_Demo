@@ -6,4 +6,13 @@
     <select id="selectAll" resultType="com.test.mybatis.entity.Goods">
         select * from t_goods order by goods_id desc limit 10
     </select>
+    <select id="selectById" parameterType="Integer" resultType="com.test.mybatis.entity.Goods">
+        select * from t_goods where goods_id = #{value }
+    </select>
+    <select id="selectByPriceRange" parameterType="java.util.Map" resultType="com.test.mybatis.entity.Goods">
+        select * from t_goods where current_price
+        between #{min} and #{max}
+        order  by current_price
+        limit 0,#{limt}
+    </select>
 </mapper>
