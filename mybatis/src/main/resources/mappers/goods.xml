@@ -16,7 +16,32 @@
         limit 0,#{limt}
     </select>
     <select id="selectGoodsMap" resultType="java.util.LinkedHashMap">
-        select g.*,c.category_name from t_goods g,t_category c
+        select g.*,c.category_name, "1" as test from t_goods g,t_category c
+        where g.category_id = c.category_id
+    </select>
+
+
+    <resultMap id="rmGoods" type="com.test.mybatis.dto.GoodsDTO">
+        <!--设置主键字段与属性映射-->
+        <id property="goods.goodsId" column="goods_id"/>
+        <!--设置非主键字段与属性映射-->
+        <result property="goods.title" column="title"/>
+        <result property="goods.originalCost" column="original_cost"/>
+        <result property="goods.currentPrice" column="current_price"/>
+        <result property="goods.discount" column="discount"/>
+        <result property="goods.isFreeDelivery" column="is_free_delivery"/>
+        <result property="goods.categoryId" column="category_id"/>
+        <result property="category.categoryId" column="category_id"/>
+        <result property="category.categoryName" column="category_name"/>
+        <result property="category.parentId" column="parent_id"/>
+        <result property="category.categoryLevel" column="category_level"/>
+        <result property="category.categoryOrder" column="category_order"/>
+
+
+        <result property="test" column="test"/>
+    </resultMap>
+    <select id="selectGoodsDTO" resultMap="rmGoods">
+        select g.*,c.*, "1" as test from t_goods g,t_category c
         where g.category_id = c.category_id
     </select>
 </mapper>

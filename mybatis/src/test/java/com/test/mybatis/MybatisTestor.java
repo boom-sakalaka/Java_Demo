@@ -1,5 +1,6 @@
 package com.test.mybatis;
 
+import com.test.mybatis.dto.GoodsDTO;
 import com.test.mybatis.entity.Goods;
 import com.test.mybatis.utils.MybatisUtils;
 import org.apache.ibatis.io.Resources;
@@ -111,6 +112,23 @@ public class MybatisTestor {
             List<Map> list = sqlSession.selectList("goods.selectGoodsMap");
             for(Map map : list){
                 System.out.println(map);
+            }
+        } catch (Exception e) {
+            throw e;
+        } finally {
+            MybatisUtils.closeSession(sqlSession);
+        }
+    }
+
+    @Test
+    public void testSelectGoodsDTO () {
+        SqlSession sqlSession = null;
+        try {
+            sqlSession = MybatisUtils.openSession();
+            // 使用map返回数据，不知道map里面有什么数据，可能会导致出错
+            List<GoodsDTO> list = sqlSession.selectList("goods.selectGoodsDTO");
+            for (GoodsDTO goodsDTO : list){
+                System.out.println(goodsDTO.getGoods().getTitle());
             }
         } catch (Exception e) {
             throw e;
