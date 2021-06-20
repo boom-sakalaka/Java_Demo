@@ -3,6 +3,9 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+    <settings>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
     <environments default="dev">
         <environment id="dev">
             <!-- 采用JDBC方式对数据库事务进行commit/rollback -->
@@ -37,4 +40,7 @@
             </dataSource>
         </environment>
     </environments>
+    <mappers>
+        <mapper resource="mappers/goods.xml"></mapper>
+    </mappers>
 </configuration>
