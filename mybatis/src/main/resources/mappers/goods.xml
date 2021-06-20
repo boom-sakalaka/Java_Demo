@@ -68,4 +68,15 @@
     <delete id="delete" parameterType="Integer">
         delete from t_goods where goods_id = #{value}
     </delete>
+    <select id="dynamicSQL" parameterType="java.util.Map" resultType="com.test.mybatis.entity.Goods">
+        select * from t_goods
+        where
+            1=1
+        <if test="categoryId !=null">
+            and category_id = #{categoryId}
+        </if>
+        <if test="currentPrice != null">
+            and current_price &lt; #{currentPrice}
+        </if>
+    </select>
 </mapper>
