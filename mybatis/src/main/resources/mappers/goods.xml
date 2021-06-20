@@ -44,4 +44,11 @@
         select g.*,c.*, "1" as test from t_goods g,t_category c
         where g.category_id = c.category_id
     </select>
+    <insert id="insert" parameterType="com.test.mybatis.entity.Goods">
+        INSERT INTO t_goods(title, sub_title, original_cost, current_price, discount, is_free_delivery, category_id)
+        VALUES (#{title} , #{subTitle} , #{originalCost}, #{currentPrice}, #{discount}, #{isFreeDelivery}, #{categoryId})
+        <selectKey resultType="Integer" keyProperty="goodsId" order="AFTER">
+        select last_insert_id()
+        </selectKey>
+    </insert>
 </mapper>
