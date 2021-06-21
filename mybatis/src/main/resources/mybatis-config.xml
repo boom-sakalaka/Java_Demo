@@ -22,15 +22,15 @@
             <!-- 采用JDBC方式对数据库事务进行commit/rollback -->
             <transactionManager type="JDBC"></transactionManager>
             <!--采用连接池方式管理数据库连接-->
-            <dataSource type="POOLED">
-<!--            <dataSource type="com.imooc.mybatis.datasource.C3P0DataSourceFactory">-->
-                <property name="driver" value="com.mysql.jdbc.Driver"/>
-                <property name="url" value="jdbc:mysql://localhost:3306/babytun?useUnicode=true&amp;characterEncoding=UTF-8"/>
-                <property name="username" value="root"/>
+<!--            <dataSource type="POOLED">-->
+            <dataSource type="com.test.mybatis.datasource.c3p0DataSourceFactory">
+                <property name="driverClass" value="com.mysql.jdbc.Driver"/>
+                <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/babytun?useUnicode=true&amp;characterEncoding=UTF-8"/>
+                <property name="user" value="root"/>
                 <property name="password" value="root"/>
-<!--                <property name="initialPoolSize" value="5"/>-->
-<!--                <property name="maxPoolSize" value="20"/>-->
-<!--                <property name="minPoolSize" value="5"/>-->
+                <property name="initialPoolSize" value="5"/>
+                <property name="maxPoolSize" value="20"/>
+                <property name="minPoolSize" value="5"/>
                 <!--...-->
             </dataSource>
         </environment>
