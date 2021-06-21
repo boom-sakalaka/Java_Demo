@@ -1,5 +1,7 @@
 package com.test.mybatis;
 
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
 import com.test.mybatis.dto.GoodsDTO;
 import com.test.mybatis.entity.Goods;
 import com.test.mybatis.entity.GoodsDetail;
@@ -13,6 +15,7 @@ import org.junit.Test;
 import java.io.IOException;
 import java.io.Reader;
 import java.sql.Connection;
+import java.sql.SQLOutput;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -310,4 +313,22 @@ public class MybatisTestor {
         }
     }
 
+    @Test
+    public void testSelectPage () throws Exception {
+        SqlSession session = null;
+        try{
+            session = MybatisUtils.openSession();
+            PageHelper.startPage(2,10);
+            Page<Goods> page = (Page)session.selectList("goods.selectPage");
+            System.out.println("总页数:" + page.getPages());
+            System.out.println("总记录数：" + page.getTotal());
+            System.out.println("开始行数:" + page.getStartRow());
+            System.out.println("结束行号:" + page.getEndRow());
+            System.out.println("当前页码:" + page.getPageNum());
+        }catch (Exception e){
+            throw  e;
+        } finally {
+            MybatisUtils.closeSession(session);
+        }
+    }
 }
