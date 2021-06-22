@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+    <servlet>
+        <!--FreemakrerServlet用于读取解析ftl文件-->
+        <servlet-name>freemakrer</servlet-name>
+        <servlet-class>freemarker.ext.servlet.FreemarkerServlet</servlet-class>
+        <!-- 定义模板的存储路径 -->
+        <init-param>
+            <param-name>TemplatePath</param-name>
+            <param-value>/WEB-INF/ftl</param-value>
+        </init-param>
+        <init-param>
+            <!--default_encoding用于设置读取ftl文件时采用的字符集,进而避免中文乱码的产生-->
+            <param-name>default_encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>freemakrer</servlet-name>
+        <url-pattern>*.ftl</url-pattern>
+    </servlet-mapping>
+</web-app>
