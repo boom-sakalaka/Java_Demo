@@ -18,7 +18,7 @@
             <dataSource type="com.imooc.oa.datasource.DruidDataSourceFactory">
                 <!--JDBC连接属性-->
                 <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
-                <property name="url" value="jdbc:mysql://localhost:3306/im-oa?useSSL=false&amp;useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=Asia/Shanghai&amp;allowPublicKeyRetrieval=true"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/imooc-oa?useSSL=false&amp;useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=Asia/Shanghai&amp;allowPublicKeyRetrieval=true"/>
                 <property name="username" value="root"/>
                 <property name="password" value="root"/>
                 <!--连接池初始连接数-->
@@ -30,5 +30,12 @@
     </environments>
     <mappers>
         <mapper resource="mappers/test.xml"/>
+        <mapper resource="mappers/user.xml"/>
+        <mapper resource="mappers/rbac.xml"/>
+        <mapper resource="mappers/employee.xml"/>
+        <mapper resource="mappers/department.xml"/>
+        <mapper resource="mappers/leave_form.xml"/>
+        <mapper resource="mappers/process_flow.xml"/>
+        <mapper resource="mappers/notice.xml"/>
     </mappers>
 </configuration>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.imooc.oa.dao.NoticeDao">
+    <insert id="insert" parameterType="com.imooc.oa.entity.Notice"
+        useGeneratedKeys="true" keyProperty="noticeId" keyColumn="notice_id">
+        INSERT INTO sys_notice( receiver_id, content, create_time) VALUES (#{receiverId}, #{content}, #{createTime})
+    </insert>
+    
+    <select id="selectByReceiverId" parameterType="Long" resultType="com.imooc.oa.entity.Notice">
+        select * from sys_notice where receiver_id = #{value} order by create_time desc limit 0,100
+    </select>
+</mapper>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="usermapper">
+    <!--按用户名获取用户对象-->
+    <select id="selectByUsername" parameterType="String" resultType="com.imooc.oa.entity.User">
+        select * from sys_user where username = #{value}
+    </select>
+</mapper>

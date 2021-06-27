@@ -40,7 +40,7 @@
             <artifactId>junit</artifactId>
             <version>4.12</version>
             <!--只参与Maven Test,不进行发布-->
-            <!-- <scope>test</scope> -->
+            <scope>test</scope>
         </dependency>
         <!--Logback日志输出组件-->
         <dependency>
@@ -63,6 +63,27 @@
             <!--依赖只参与编译测试,不进行发布-->
             <scope>provided</scope>
         </dependency>
+        <!-- FastJSON JSON序列化组件 -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.62</version>
+        </dependency>
+        <!-- MD5摘要工具包 -->
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>1.14</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.imooc</groupId>
+            <artifactId>imooc-oa</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/main/resources/imooc-oa.jar</systemPath>
+        </dependency>
+
     </dependencies>
     <build>
         <plugins>
