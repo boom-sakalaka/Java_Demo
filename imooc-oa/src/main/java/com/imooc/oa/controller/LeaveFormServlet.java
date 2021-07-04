@@ -31,12 +31,16 @@ public class LeaveFormServlet extends HttpServlet {
         // http://localhost/leave/create
         String uri = request.getRequestURI();
         String methodName = uri.substring(uri.lastIndexOf("/")+1);
-        if(methodName.equals("create")){
-            this.create(request,response);
-        }else if(methodName.equals("list")){
-            this.getLeaveFormList(request, response);
-        }else if(methodName.equals("audit")){
-            this.audit(request, response);
+        switch (methodName) {
+            case "create":
+                this.create(request, response);
+                break;
+            case "list":
+                this.getLeaveFormList(request, response);
+                break;
+            case "audit":
+                this.audit(request, response);
+                break;
         }
     }
 
