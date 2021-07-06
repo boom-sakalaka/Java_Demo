@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="c1" class="com.io.spring.ioc.entity.Computer">
+        <constructor-arg name="brand" value="联想" />
+        <constructor-arg name="type" value="台式机" />
+        <constructor-arg name="sn" value="8389898" />
+        <constructor-arg name="price" value="3085"/>
+    </bean>
+
+    <bean id="company" class="com.io.spring.ioc.entity.Company" >
+        <property name="rooms" >
+            <list>
+                <value>2001-总裁办</value>
+                <value>2003-总经理办公室</value>
+                <value>2010-研发部会议室</value>
+            </list>
+        </property>
+        <property name="computers">
+            <map>
+                <entry key="dev-88172" value-ref="c1" />
+                <entry key="dev-88173">
+                    <bean class="com.io.spring.ioc.entity.Computer">
+                        <constructor-arg name="brand" value="联想" />
+                        <constructor-arg name="type" value="笔记本" />
+                        <constructor-arg name="sn" value="8389898" />
+                        <constructor-arg name="price" value="3085"/>
+                    </bean>
+                </entry>
+            </map>
+        </property>
+        <property name="info" >
+            <props>
+                <prop key="phone">010-12345678</prop>
+                <prop key="address">北京市朝阳区</prop>
+                <prop key="com">www.baidu.com</prop>
+            </props>
+        </property>
+    </bean>
+</beans>
