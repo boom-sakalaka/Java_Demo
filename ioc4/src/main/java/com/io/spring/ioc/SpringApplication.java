@@ -10,5 +10,10 @@ public class SpringApplication {
         Company company = context.getBean("company", Company.class);
         System.out.println(company);
         System.out.println(company.getInfo().getProperty("address"));
+        String[] beanDefinitionNames = context.getBeanDefinitionNames();
+        System.out.println("=============================================");
+        for (String beanName : beanDefinitionNames){
+            System.out.println(beanName);
+        }
     }
 }
