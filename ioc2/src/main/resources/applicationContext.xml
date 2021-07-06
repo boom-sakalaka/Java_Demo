@@ -7,4 +7,20 @@
     <bean class="com.io.spring.ioc.entity.Apple" id="apple1">
 
     </bean>
+
+    <bean class="com.io.spring.ioc.entity.Apple" id="apple2">
+        <constructor-arg name="title" value="红富士" />
+        <constructor-arg name="color" value="红色" />
+        <constructor-arg name="origin" value="欧洲" />
+    </bean>
+
+    <!--    静态方法 创建-->
+    <bean id="apple4" class="com.io.spring.ioc.factory.AppleStaticFactory" factory-method="createSweetApple"/>
+
+   <!-- 工厂实例化方法-->
+    <bean id="factoryInstance" class="com.io.spring.ioc.factory.AppleFactoryInstance" />
+    <bean id="apple5" factory-bean="factoryInstance" factory-method="createSweetApple" />
+
+    
+
 </beans>

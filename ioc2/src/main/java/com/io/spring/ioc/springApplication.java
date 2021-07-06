@@ -7,6 +7,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class springApplication {
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("classpath:applicationContext.xml");
-//        context.getBean("apple1", Apple.class);
+        Apple apple4 = context.getBean("apple4", Apple.class);
+        System.out.println(apple4.getTitle());
     }
 }

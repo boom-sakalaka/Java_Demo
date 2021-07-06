@@ -10,6 +10,7 @@ public class Apple {
     }
 
     public Apple(String title, String color, String origin) {
+        System.out.println("通过带参构造方法创建对象" + this);
         this.title = title;
         this.color = color;
         this.origin = origin;
