@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+    <bean id="sweetApple" class="com.io.spring.ioc.entity.Apple">
+        <property name="title" value="红富士"/>
+        <property name="color" value="红色"/>
+        <property name="origin" value="欧洲"/>
+    </bean>
+</beans>
