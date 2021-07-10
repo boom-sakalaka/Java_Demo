@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd">
+    <bean id="userDao" class="com.imooc.spring.aop.dao.UserDao"/>
+    <bean id="employeeDao" class="com.imooc.spring.aop.dao.EmployeeDao"/>
+    <bean id="userService" class="com.imooc.spring.aop.service.UserService">
+        <property name="userDao" ref="userDao"/>
+    </bean>
+    <bean id="employeeService" class="com.imooc.spring.aop.service.EmployeeService">
+        <property name="employeeDao" ref="employeeDao"/>
+    </bean>
+    <!-- AOP配置 -->
+    <bean id="methodAspect" class="com.imooc.spring.aop.aspect.MethodAspect"></bean>
+    <aop:config>
+        <!-- PointCut 切点,使用execution表达式描述切面的作用范围 -->
+        <!-- execution(public * com.imooc..*.*(..)) 说明切面作用在com.imooc包下的所有类的所有方法上 -->
+        <!--<aop:pointcut id="pointcut" expression="execution(public * com.imooc..*.*(..))"></aop:pointcut>-->
+        <!--只对所有Service类生效-->
+        <aop:pointcut id="pointcut" expression="execution(* com.imooc..*Service.*(..))"></aop:pointcut>
+        <!--只对所有返回值为String类型方法生效-->
+        <!--<aop:pointcut id="pointcut" expression="execution(String com.imooc..*Service.*(..))"></aop:pointcut>-->
+        <!--对方法名进行约束 -->
+        <!--<aop:pointcut id="pointcut" expression="execution(* com.imooc..*Service.create*(..))"></aop:pointcut>-->
+        <!-- 对参数进行约束 -->
+        <!--<aop:pointcut id="pointcut" expression="execution(* com.imooc..*Service.*(String,*))"></aop:pointcut>-->
+        <!-- 定义切面类 -->
+        <aop:aspect ref="methodAspect">
+            <!-- before通知(Advice),代表在目标方法运行前先执行methodAspect.printExecutionTime() -->
+            <aop:before method="printExecutionTime" pointcut-ref="pointcut"/>
+            <aop:after-returning method="doAfterReturning" returning="ret" pointcut-ref="pointcut"/>
+            <aop:after-throwing method="doAfterThrowing" throwing="th" pointcut-ref="pointcut"/>
+            <aop:after method="doAfter" pointcut-ref="pointcut"></aop:after>
+        </aop:aspect>
+    </aop:config>
+</beans>
